@@ -32,10 +32,12 @@ $ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
 
 ** To re-enable automatic boot source updates, set the `spec.featureGates.enableCommonBootImageImport` field in the `HyperConverged` CR to `true`. For example:
 +
-[source,terminal,subs="attributes+"]
-----
-$ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
-  --type json -p '[{"op": "replace", "path": \
-  "/spec/featureGates/enableCommonBootImageImport", \
-  "value": true}]'
-----
+include::snippets/cnv-feature-gate-snip.adoc[leveloffset=+1]
+
+// [source,terminal,subs="attributes+"]
+// ----
+// $ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
+//   --type json -p '[{"op": "replace", "path": \
+//   "/spec/featureGates/enableCommonBootImageImport", \
+//   "value": true}]'
+// ----

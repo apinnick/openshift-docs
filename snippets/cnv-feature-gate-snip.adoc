@@ -1,0 +1,17 @@
+// When including this file, ensure that {FeatureGate} and {value} are set immediately before the include.
+// Example:
+// :FeatureGate: enableCommonBootImageImport
+// :value: true
+// include::snippets/cnv-feature-gate-snip.adoc[]
+
+:_mod-docs-content-type: SNIPPET
++
+[source,terminal,subs="attributes+"]
+----
+$ oc patch hyperconverged kubevirt-hyperconverged -n {CNVNamespace} \
+  --type json -p '[{"op": "replace", "path": \
+  "/spec/featureGates/{FeatureGate}", \
+  "value": {value}}]'
+----
+// Undefine {FeatureGate} attribute, so that any mistakes are easily spotted
+:!FeatureGate:
